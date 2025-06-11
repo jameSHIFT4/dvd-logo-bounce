@@ -1,0 +1,120 @@
+html {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+svg {
+  width: 140px;
+  fill: currentColor;
+  color: rgb(157, 157, 0);
+}
+
+.dvd-box {
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+}
+
+/* Code for links */
+
+.regular {
+  position: absolute;
+  font-weight: bold;
+  font-size: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+  color: #111;
+  text-decoration: none;
+  padding: 2.5rem 3.5rem;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 5rem;
+  white-space: nowrap;
+  box-shadow: -5px 0 5px white, 5px 0px 5px white, 0 -5px 5px white, 0 5px 5px white;
+  transition: opacity 0.5s ease;
+}
+
+.regular:hover {
+  opacity: 1;
+}
+
+.regular:active {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+p {
+  margin: 0;
+}
+
+.footer {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 1.5rem;
+}
+
+/* jameSHIFT4 transition code */
+
+/************
+Normal HTML:
+<span class="jame">jame<span class="shift4"><span class="shift4-s">S</span>HIFT4<span class="dollar" aria-hidden="true">$</span></span></span>
+
+Link HTML:
+<a class="jame" href="/">jame<span class="shift4"><span class="shift4-s">S</span>HIFT4<span class="dollar" aria-hidden="true">$</span></span></a>
+************/
+
+.jame {
+  --jameshift4-color: #fff;
+  position: relative;
+  color: var(--jameshift4-color);
+  text-decoration: none;
+}
+
+.shift4,
+.shift4-s {
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+.dollar {
+  color: var(--jameshift4-color) !important;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  user-select: none;
+  transition: color 0s, opacity 0.5s ease;
+}
+
+.jame:hover {
+  color: var(--jameshift4-color);
+}
+
+.jame:hover .shift4 {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.jame:hover .shift4-s {
+  color: rgba(255, 255, 255, 0);
+}
+
+.jame:hover .dollar {
+  opacity: 1;
+}
+
+.jame:active .dollar {
+  color: #d4af37 !important;
+}
